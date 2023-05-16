@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>product-list works!</h1>
+    <br>
+    {{status?"on":"off"}}
+    <button (click)="setStatus()" class="btn btn-primary">status</button>
+    <br>
+    <div *ngIf="status">
+        <input type="text" (input)="setInput($event)">
+        {{inputValue}}
+    </div>
+    <br>
+    <table class="table text-center">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Anh</th>
+                <th>Ten San Pham</th>
+                <th>Gia</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pro of product; index as i">
+                <td>{{i + 1}}</td>
+                <td><img src="{{pro.image}}" alt="" width="100px"></td>
+                <td>{{pro.name}}</td>
+                <td>{{pro.price}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="remove(pro._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
