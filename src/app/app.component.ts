@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
-@Component( {
+@Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: [ './app.component.scss' ]
-} )
-export class AppComponent
-{
+  styleUrls: ['./app.component.scss']
+})
+export class AppComponent {
   title: string = 'FW1';
   name: string = "Phan Thanh Dong";
   age: number = 20;
@@ -14,14 +13,11 @@ export class AppComponent
     class: "we17301",
     teacher: "Dat"
   };
-  showAge ()
-  {
+  showAge() {
     let mess: string = "";
-    if ( this.age > 19 )
-    {
+    if (this.age > 19) {
       mess = "ng lon"
-    } else
-    {
+    } else {
       mess = "tre trau"
     }
     return mess;

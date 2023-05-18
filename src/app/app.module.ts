@@ -11,8 +11,11 @@ import { ProductAddComponent } from './components/Admin/product-add/product-add.
 import { ProductEditComponent } from './components/Admin/product-edit/product-edit.component';
 import { SignInComponent } from './components/Client/sign-in/sign-in.component';
 import { SignUpComponent } from './components/Client/sign-up/sign-up.component';
+import { LayoutClientComponent } from './layout/layout-client/layout-client.component';
+import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
+import { AboutComponent } from './components/Client/about/about.component';
 
-@NgModule( {
+@NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
@@ -22,13 +25,16 @@ import { SignUpComponent } from './components/Client/sign-up/sign-up.component';
     ProductAddComponent,
     ProductEditComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    LayoutClientComponent,
+    LayoutAdminComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [ AppComponent ]
-} )
+  bootstrap: [AppComponent]
+})
 export class AppModule { }

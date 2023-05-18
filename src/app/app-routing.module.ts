@@ -2,14 +2,28 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProductListComponent } from './components/Client/product-list/product-list.component';
 import { HomeComponent } from './components/Client/home/home.component';
+import { LayoutClientComponent } from './layout/layout-client/layout-client.component';
+import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
+import { AboutComponent } from './components/Client/about/about.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'product', component: ProductListComponent }
+  {
+    path: '', component: LayoutClientComponent, children: [
+      { path: '', component: HomeComponent },
+      { path: 'products', component: ProductListComponent },
+      {path:'about',component:AboutComponent}
+    ]
+  },
+  {
+    path: 'admin', component: LayoutAdminComponent, children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'products', component: ProductListComponent }
+    ]
+  }
 ];
 
-@NgModule( {
-  imports: [ RouterModule.forRoot( routes ) ],
-  exports: [ RouterModule ]
-} )
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
 export class AppRoutingModule { }
