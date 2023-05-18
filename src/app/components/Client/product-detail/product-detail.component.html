@@ -1,1 +1,75 @@
-<p>product-detail works!</p>
+<div class="container">
+    <div class="row" style="margin: 100px 0;">
+        <div class="col-6" style="padding-left: 0; padding-right: 30px;">
+            <img src="https://picsum.photos/600/700" alt="product">
+        </div>
+        <div class="col-6">
+            <h1>Product 1</h1>
+
+            <div class="price">
+                <p>$ 100</p>
+            </div>
+
+            <div class="desc">
+                <p>When a user interacts with the range input, they can drag the slider to select a value within the
+                    range defined by the
+                    input. The selected value can then be accessed using JavaScript or other programming languages for
+                    further processing or
+                    displaying to the user.</p>
+            </div>
+
+            <div class="to-cart">
+                <div class="size">
+                    <h4>Size</h4>
+                    <button class="btn btn-secondary">S</button>
+                    <button class="btn btn-secondary">M</button>
+                    <button class="btn btn-secondary">L</button>
+                    <button class="btn btn-secondary">XL</button>
+                </div>
+                <div class="color">
+                    <h4>Color</h4>
+                    <button class="btn btn-secondary">Black</button>
+                    <button class="btn btn-secondary">Red</button>
+                    <button class="btn btn-secondary">White</button>
+                </div>
+                <div class="quantity">
+                    <h4>Quantity</h4>
+                    <input type="number" name="quantity" class="form-control" [min]="1" [max]="100" [value]="1">
+                </div>
+                <div class="quantity">
+                    <button class="btn btn-dark">Add To Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-4 text-center">
+            <a href="/products/1"><img src="https://picsum.photos/250/250" alt="product"></a>
+            <div class="item-info">
+                <p>$ 100</p>
+                <a href="/products/1">
+                    <p>Product 2</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-4 text-center">
+            <a href="/products/1"><img src="https://picsum.photos/250/250" alt="product"></a>
+            <div class="item-info">
+                <p>$ 100</p>
+                <a href="/products/1">
+                    <p>Product 4</p>
+                </a>
+            </div>
+        </div>
+        <div class="col-4 text-center">
+            <a href="/products/1"><img src="https://picsum.photos/250/250" alt="product"></a>
+            <div class="item-info">
+                <p>$ 100</p>
+                <a href="/products/1">
+                    <p>Product 7</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
