@@ -6,6 +6,7 @@ import { LayoutClientComponent } from './layout/layout-client/layout-client.comp
 import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
 import { AboutComponent } from './components/Client/about/about.component';
 import { ProductDetailComponent } from './components/Client/product-detail/product-detail.component';
+import { SignInComponent } from './components/Client/sign-in/sign-in.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'products', component: ProductListComponent },
       { path: "products/:id", component: ProductDetailComponent },
-      { path: 'about', component: AboutComponent }
+      { path: 'about', component: AboutComponent },
+      { path: 'signin', component: SignInComponent },
     ]
   },
   {
