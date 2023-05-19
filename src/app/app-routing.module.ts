@@ -7,6 +7,7 @@ import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.compone
 import { AboutComponent } from './components/Client/about/about.component';
 import { ProductDetailComponent } from './components/Client/product-detail/product-detail.component';
 import { SignInComponent } from './components/Client/sign-in/sign-in.component';
+import { SignUpComponent } from './components/Client/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: "products/:id", component: ProductDetailComponent },
       { path: 'about', component: AboutComponent },
       { path: 'signin', component: SignInComponent },
+      { path: 'signup', component: SignUpComponent },
     ]
   },
   {
