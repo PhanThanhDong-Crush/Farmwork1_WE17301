@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/Client/product-list/product-list.component';
@@ -16,7 +17,7 @@ import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.compone
 import { AboutComponent } from './components/Client/about/about.component';
 import { DashboardComponent } from './components/Admin/dashboard/dashboard.component';
 
-@NgModule({
+@NgModule( {
   declarations: [
     AppComponent,
     ProductListComponent,
@@ -34,9 +35,11 @@ import { DashboardComponent } from './components/Admin/dashboard/dashboard.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
-})
+  bootstrap: [ AppComponent ]
+} )
 export class AppModule { }
