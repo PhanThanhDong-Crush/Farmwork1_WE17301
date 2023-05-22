@@ -14,6 +14,7 @@ import { SignUpComponent } from './components/Client/sign-up/sign-up.component';
 import { LayoutClientComponent } from './layout/layout-client/layout-client.component';
 import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
 import { AboutComponent } from './components/Client/about/about.component';
+import { DashboardComponent } from './components/Admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AboutComponent } from './components/Client/about/about.component';
     SignUpComponent,
     LayoutClientComponent,
     LayoutAdminComponent,
-    AboutComponent
+    AboutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
