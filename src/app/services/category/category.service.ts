@@ -18,7 +18,7 @@ export class CategoryService
 
   getOneCategory ( id: Number | String ): Observable<ICategory[]>
   {
-    return this.http.get<ICategory[]>( `http://localhost:3000/categories${ id }` )
+    return this.http.get<ICategory[]>( `http://localhost:3000/categories/${ id }` )
   }
 
   addCategory ( category: ICategory ): Observable<ICategory[]>
@@ -33,6 +33,6 @@ export class CategoryService
 
   deleteCategory ( id: Number | String ): Observable<ICategory[]>
   {
-    return this.http.delete<ICategory[]>( `http://localhost:3000/categories${ id }` )
+    return this.http.delete<ICategory[]>( `http://localhost:3000/categories/${ id }` )
   }
 }

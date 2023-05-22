@@ -18,7 +18,7 @@ export class ProductService
 
   getOneProduct ( id: Number | String ): Observable<IProduct[]>
   {
-    return this.http.get<IProduct[]>( `http://localhost:3000/products${ id }` )
+    return this.http.get<IProduct[]>( `http://localhost:3000/products/${ id }` )
   }
 
   addProduct ( product: IProduct ): Observable<IProduct[]>
@@ -33,6 +33,6 @@ export class ProductService
 
   deleteProduct ( id: Number | String ): Observable<IProduct[]>
   {
-    return this.http.delete<IProduct[]>( `http://localhost:3000/products${ id }` )
+    return this.http.delete<IProduct[]>( `http://localhost:3000/products/${ id }` )
   }
 }
