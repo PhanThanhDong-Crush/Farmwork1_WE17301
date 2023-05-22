@@ -8,12 +8,13 @@ import { AboutComponent } from './components/Client/about/about.component';
 import { ProductDetailComponent } from './components/Client/product-detail/product-detail.component';
 import { SignInComponent } from './components/Client/sign-in/sign-in.component';
 import { SignUpComponent } from './components/Client/sign-up/sign-up.component';
+import { DashboardComponent } from './components/Admin/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
     path: '', component: LayoutClientComponent, children: [
       { path: '', component: HomeComponent },
-      { path: 'products', component: ProductListComponent },
+
       { path: "products/:id", component: ProductDetailComponent },
       { path: 'about', component: AboutComponent },
       { path: 'signin', component: SignInComponent },
@@ -23,13 +24,14 @@ const routes: Routes = [
   {
     path: 'admin', component: LayoutAdminComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: DashboardComponent },
       { path: 'products', component: ProductListComponent }
     ]
   }
 ];
 
-@NgModule( {
-  imports: [ RouterModule.forRoot( routes ) ],
-  exports: [ RouterModule ]
-} )
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
 export class AppRoutingModule { }
