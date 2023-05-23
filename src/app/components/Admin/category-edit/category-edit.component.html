@@ -1,1 +1,14 @@
-<p>category-edit works!</p>
+<div class="container pt-3">
+    <h1>Edit Category</h1>
+    <form (ngSubmit)="onHandleSubmit()">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Category:</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="category"
+                [(ngModel)]="category.name" name="name">
+        </div>
+
+        <div class="mb-3 text-center">
+            <button type="submit" class="btn btn-primary" *ngIf="category && category.name !=''">Update</button>
+        </div>
+    </form>
+</div>

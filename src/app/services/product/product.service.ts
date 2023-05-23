@@ -16,23 +16,23 @@ export class ProductService
     return this.http.get<IProduct[]>( `http://localhost:3000/products` )
   }
 
-  getOneProduct ( id: Number | String ): Observable<IProduct[]>
+  getOneProduct ( id: Number | String ): Observable<IProduct>
   {
-    return this.http.get<IProduct[]>( `http://localhost:3000/products/${ id }` )
+    return this.http.get<IProduct>( `http://localhost:3000/products/${ id }` )
   }
 
-  addProduct ( product: IProduct ): Observable<IProduct[]>
+  addProduct ( product: IProduct ): Observable<IProduct>
   {
-    return this.http.post<IProduct[]>( `http://localhost:3000/products`, product )
+    return this.http.post<IProduct>( `http://localhost:3000/products`, product )
   }
 
-  editProduct ( product: IProduct ): Observable<IProduct[]>
+  editProduct ( product: IProduct ): Observable<IProduct>
   {
-    return this.http.patch<IProduct[]>( `http://localhost:3000/products/${ product.id }`, product )
+    return this.http.patch<IProduct>( `http://localhost:3000/products/${ product.id }`, product )
   }
 
-  deleteProduct ( id: Number | String ): Observable<IProduct[]>
+  deleteProduct ( id: Number | String ): Observable<IProduct>
   {
-    return this.http.delete<IProduct[]>( `http://localhost:3000/products/${ id }` )
+    return this.http.delete<IProduct>( `http://localhost:3000/products/${ id }` )
   }
 }
