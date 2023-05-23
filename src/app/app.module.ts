@@ -16,6 +16,9 @@ import { LayoutClientComponent } from './layout/layout-client/layout-client.comp
 import { LayoutAdminComponent } from './layout/layout-admin/layout-admin.component';
 import { AboutComponent } from './components/Client/about/about.component';
 import { DashboardComponent } from './components/Admin/dashboard/dashboard.component';
+import { CategoriesComponent } from './components/Admin/categories/categories.component';
+import { CategoryAddComponent } from './components/Admin/category-add/category-add.component';
+import { CategoryEditComponent } from './components/Admin/category-edit/category-edit.component';
 
 @NgModule( {
   declarations: [
@@ -31,7 +34,10 @@ import { DashboardComponent } from './components/Admin/dashboard/dashboard.compo
     LayoutClientComponent,
     LayoutAdminComponent,
     AboutComponent,
-    DashboardComponent
+    DashboardComponent,
+    CategoriesComponent,
+    CategoryAddComponent,
+    CategoryEditComponent
   ],
   imports: [
     BrowserModule,
