@@ -43,10 +43,11 @@
       "categoryId": "3"
     },
     {
-      "name": "an nhiên",
-      "price": 100,
-      "categoryId": "3",
-      "id": 7
+      "name": "product test",
+      "price": 1000,
+      "categoryId": "1",
+      "description": "asdasdasd",
+      "id": 8
     }
   ],
   "categories": [
