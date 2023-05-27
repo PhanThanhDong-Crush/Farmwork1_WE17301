@@ -1,1 +1,29 @@
-<p>product-add works!</p>
+<div class="container pt-3">
+    <h1>Add New Product</h1>
+    <form (ngSubmit)="onHandleSubmit()">
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="product.categoryId"
+                name="categoryId">
+                <option *ngFor="let category of category" value="{{category.id}}">{{category.name}}</option>
+
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Product Name:</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="product"
+                [(ngModel)]="product.name" name="name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Price:</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="price"
+                [(ngModel)]="product.price" name="price">
+        </div>
+
+
+        <div class="mb-3 text-center">
+            {{product|json}}
+            <button type="submit" class="btn btn-primary" *ngIf="product && product.name !=''">Add
+                New</button>
+        </div>
+    </form>
+</div>
