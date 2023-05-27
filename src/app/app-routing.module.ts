@@ -15,12 +15,13 @@ import { ProductEditComponent } from './components/Admin/product-edit/product-ed
 import { CategoriesComponent } from './components/Admin/categories/categories.component';
 import { CategoryAddComponent } from './components/Admin/category-add/category-add.component';
 import { CategoryEditComponent } from './components/Admin/category-edit/category-edit.component';
+import { ProductsComponent } from './components/Admin/products/products.component';
 
 const routes: Routes = [
   {
     path: '', component: LayoutClientComponent, children: [
       { path: '', component: HomeComponent },
-
+      {path:"products",component:ProductListComponent},
       { path: "products/:id", component: ProductDetailComponent },
       { path: 'about', component: AboutComponent },
       { path: 'signin', component: SignInComponent },
@@ -35,7 +36,7 @@ const routes: Routes = [
       { path: 'category/add', component: CategoryAddComponent },
       { path: 'category/:id/edit', component: CategoryEditComponent },
 
-      { path: 'products', component: ProductListComponent },
+      { path: 'products', component: ProductsComponent},
       { path: 'products/add', component: ProductAddComponent },
       { path: 'products/:id/edit', component: ProductEditComponent },
       
