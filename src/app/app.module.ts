@@ -19,6 +19,7 @@ import { DashboardComponent } from './components/Admin/dashboard/dashboard.compo
 import { CategoriesComponent } from './components/Admin/categories/categories.component';
 import { CategoryAddComponent } from './components/Admin/category-add/category-add.component';
 import { CategoryEditComponent } from './components/Admin/category-edit/category-edit.component';
+import { ContactComponent } from './components/Client/contact/contact.component';
 
 @NgModule( {
   declarations: [
@@ -37,7 +38,8 @@ import { CategoryEditComponent } from './components/Admin/category-edit/category
     DashboardComponent,
     CategoriesComponent,
     CategoryAddComponent,
-    CategoryEditComponent
+    CategoryEditComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

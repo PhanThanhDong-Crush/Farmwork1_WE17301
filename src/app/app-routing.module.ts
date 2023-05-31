@@ -16,14 +16,16 @@ import { CategoriesComponent } from './components/Admin/categories/categories.co
 import { CategoryAddComponent } from './components/Admin/category-add/category-add.component';
 import { CategoryEditComponent } from './components/Admin/category-edit/category-edit.component';
 import { ProductsComponent } from './components/Admin/products/products.component';
+import { ContactComponent } from './components/Client/contact/contact.component';
 
 const routes: Routes = [
   {
     path: '', component: LayoutClientComponent, children: [
       { path: '', component: HomeComponent },
-      {path:"products",component:ProductListComponent},
+      { path: "products", component: ProductListComponent },
       { path: "products/:id", component: ProductDetailComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'contact', component: ContactComponent },
       { path: 'signin', component: SignInComponent },
       { path: 'signup', component: SignUpComponent },
     ]
@@ -36,16 +38,16 @@ const routes: Routes = [
       { path: 'category/add', component: CategoryAddComponent },
       { path: 'category/:id/edit', component: CategoryEditComponent },
 
-      { path: 'products', component: ProductsComponent},
+      { path: 'products', component: ProductsComponent },
       { path: 'products/add', component: ProductAddComponent },
       { path: 'products/:id/edit', component: ProductEditComponent },
-      
+
     ]
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+@NgModule( {
+  imports: [ RouterModule.forRoot( routes ) ],
+  exports: [ RouterModule ]
+} )
 export class AppRoutingModule { }
