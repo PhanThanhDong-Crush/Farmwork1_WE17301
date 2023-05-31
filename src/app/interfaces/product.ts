@@ -3,7 +3,9 @@ export interface IProduct
     id?: number,
     name: string,
     image?: string,
-    price: number,
-    description?:string,
-    categoryId?:number
+    price?: number,
+    quantity?: number,
+    description?: string,
+    dateAdded?: string,
+    categoryId?: number
 }

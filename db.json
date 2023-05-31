@@ -43,18 +43,14 @@
       "categoryId": "3"
     },
     {
-      "name": "product test",
-      "price": 1000,
-      "categoryId": "1",
-      "description": "asdasdasd",
-      "id": 8
+      "name": "Description 1123",
+      "price": 4,
+      "categoryId": "2",
+      "description": "weretrytuy\n\n",
+      "id": 7
     }
   ],
   "categories": [
-    {
-      "id": 1,
-      "name": "Category A"
-    },
     {
       "id": 2,
       "name": "Category B"

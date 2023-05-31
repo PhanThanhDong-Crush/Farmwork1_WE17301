@@ -1,89 +1,64 @@
-<div class="container">
-    <div class="pb-3">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
+<!DOCTYPE html>
+<html lang="en">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" routerLink="">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" routerLink="products">Product</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" routerLink="about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" routerLink="signin">Sign In</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" routerLink="signup">Sign Up</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <!-- baner -->
-    <div class="banner">
-        <div id="carouselExampleIndicators" class="carousel slide slide-banner">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://picsum.photos/1980/300" class="d-block w-100"
-                        alt="https://picsum.photos/1980/300">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/1981/300" class="d-block w-100"
-                        alt="https://picsum.photos/1981/300">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://picsum.photos/1982/300" class="d-block w-100"
-                        alt="https://picsum.photos/1982/300">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Young Fashion</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!--icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    </head>
 
-    <main class="pt-3">
-        <router-outlet></router-outlet>
-    </main>
-    <footer class="bg-dark py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto">
-                    <div class="small m-0 text-white">Copyright &copy; Your Website 2023</div>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="/">Young Fashion</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"><span
+                            class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/products">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+                            <li>
+                                <button class="btn btn-outline-primary" routerLink="/signin">LogIn</button>
+                            </li>
+                            <li>
+                                <button class="btn btn-outline-danger" routerLink="/admin">Admin</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-auto">
-                    <a class="link-light small" href="#!">Privacy</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="#!">Terms</a>
-                    <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="#!">Contact</a>
+            </nav>
+
+            <router-outlet></router-outlet>
+        </main>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="d-flex align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto">
+                        <div class="small m-0 text-white">Copyright &copy; Young Fashion 2023</div>
+                    </div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-</div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>
