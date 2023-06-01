@@ -3,14 +3,12 @@
         <h1>All products of Young Fashion are available here</h1>
     </div>
     <div class="row">
-        <div class="col-3 bg-gray">
-            <div>
+        <div class="col-3 bg-gray" >
+            <div >
                 <h3>Category</h3>
-                <ul>
-                    <li><a href="#">Category 1</a></li>
-                    <li><a href="#">Category 2</a></li>
-                    <li><a href="#">Category 3</a></li>
-                    <li><a href="#">Category 4</a></li>
+                <ul *ngFor="let category of categories">
+                    <li><a href="#">{{category.name}}</a></li>
+                    
                 </ul>
             </div>
             <div>
@@ -24,46 +22,19 @@
         </div>
         <div class="col-8" style="margin-left: 30px; margin-bottom: 50px;">
             <div class="row gx-5">
-                <div class="col-lg-4">
+                
+                <div class="col-lg-4" *ngFor="let product of products">
                     <div class="position-relative mb-5">
                         <img class="img-fluid rounded-3 mb-3"
                             src="https://bizweb.dktcdn.net/thumb/1024x1024/100/310/270/products/158-10e96752-857f-4df3-9e92-cdcfd7765fef.jpg?v=1680163613750"
                             alt="..." />
-                        <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Product
-                            name</a>
-                        <span style="color: red; font-weight: 900;"> - $100</span>
+                        <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" routerLink="/products/{{product.id}}">
+                            {{product.name}}</a>
+                        <span style="color: red; font-weight: 900;"> - {{product.price}}</span>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="position-relative mb-5">
-                        <img class="img-fluid rounded-3 mb-3"
-                            src="https://bizweb.dktcdn.net/thumb/1024x1024/100/310/270/products/158-10e96752-857f-4df3-9e92-cdcfd7765fef.jpg?v=1680163613750"
-                            alt="..." />
-                        <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Product
-                            name</a>
-                        <span style="color: red; font-weight: 900;"> - $100</span>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="position-relative mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-3 mb-3"
-                            src="https://bizweb.dktcdn.net/thumb/1024x1024/100/310/270/products/158-10e96752-857f-4df3-9e92-cdcfd7765fef.jpg?v=1680163613750"
-                            alt="..." />
-                        <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Product
-                            name</a>
-                        <span style="color: red; font-weight: 900;"> - $100</span>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="position-relative">
-                        <img class="img-fluid rounded-3 mb-3"
-                            src="https://bizweb.dktcdn.net/thumb/1024x1024/100/310/270/products/158-10e96752-857f-4df3-9e92-cdcfd7765fef.jpg?v=1680163613750"
-                            alt="..." />
-                        <a class="h5 fw-bolder text-decoration-none link-dark stretched-link" href="#!">Product
-                            name</a>
-                        <span style="color: red; font-weight: 900;"> - $100</span>
-                    </div>
-                </div>
+                
+                
             </div>
             <section class="py-5" style="margin: 50px 35%;">
                 <nav aria-label="Page navigation example">
