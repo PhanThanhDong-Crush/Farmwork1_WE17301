@@ -18,11 +18,12 @@ export class ProductListComponent
       private productServices:ProductService,
       private categoryService:CategoryService
     ){
+      //lấy Product 
     this.productServices.getAllProduct().subscribe(data =>{
       this.products =data
     },err=>console.log(err)
     )
-
+    //Lấy Categories
     this.categoryService.getAllCategory().subscribe(data =>{
       this.categories =data
     },err=>console.log(err)
