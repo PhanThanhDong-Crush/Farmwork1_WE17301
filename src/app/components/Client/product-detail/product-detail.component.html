@@ -1,75 +1,109 @@
-<div class="container">
-    <div class="row" style="margin: 100px 0;">
-        <div class="col-6" style="padding-left: 0; padding-right: 30px;">
-            <img src="https://picsum.photos/600/700" alt="product">
+<section class="py-5">
+    <div class="container px-5 my-5">
+        <div class="text-center ">
+            <h4 router-link="#cart">The product you want to see is very beautiful and of such quality, <br>
+                would you like to
+                place an order with that product? Or click add to cart now!!!</h4>
         </div>
-        <div class="col-6">
-            <h1>Product 1</h1>
+        <section class="py-5 bg-light" id="scroll-target">
+            <div class="container px-5 my-5">
+                <div class="row gx-5 align-items-center">
+                    <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0"
+                            src="https://dony.vn/wp-content/uploads/2021/08/mau-quan-vay-nu-dep-ban-chay-2.jpg"
+                            alt="..." /></div>
+                    <div class="col-lg-6">
+                        <h2 class="fw-bolder">Product name</h2>
+                        <li>Date add</li>
+                        <br>
+                        <p class="lead fw-normal text-muted mb-0">Description: Lorem ipsum dolor sit amet
+                            consectetur
+                            adipisicing elit. Iusto
+                            est, ut esse a labore aliquam beatae expedita. Blanditiis impedit numquam libero
+                            molestiae et fugit
+                            cupiditate, quibusdam expedita, maiores eaque quisquam.</p>
+                        <figure class="mb-4 d-flex" style="margin-top: 150px;">
+                            <form>
+                                <p>Quantity</p>
+                                <input type="number" name="quantity" class="form-control" [min]="1" [max]="100"
+                                    value="1" style="width: 110px;">
+                                <button class="btn btn-dark" id="cart">Add To Cart</button>
+                            </form>
+                        </figure>
+                    </div>
 
-            <div class="price">
-                <p>$ 100</p>
+                </div>
             </div>
-
-            <div class="desc">
-                <p>When a user interacts with the range input, they can drag the slider to select a value within the
-                    range defined by the
-                    input. The selected value can then be accessed using JavaScript or other programming languages for
-                    further processing or
-                    displaying to the user.</p>
-            </div>
-
-            <div class="to-cart">
-                <div class="size">
-                    <h4>Size</h4>
-                    <button class="btn btn-secondary">S</button>
-                    <button class="btn btn-secondary">M</button>
-                    <button class="btn btn-secondary">L</button>
-                    <button class="btn btn-secondary">XL</button>
-                </div>
-                <div class="color">
-                    <h4>Color</h4>
-                    <button class="btn btn-secondary">Black</button>
-                    <button class="btn btn-secondary">Red</button>
-                    <button class="btn btn-secondary">White</button>
-                </div>
-                <div class="quantity">
-                    <h4>Quantity</h4>
-                    <input type="number" name="quantity" class="form-control" [min]="1" [max]="100" [value]="1">
-                </div>
-                <div class="quantity">
-                    <button class="btn btn-dark">Add To Cart</button>
-                </div>
+        </section>
+        <div class="row gx-5">
+            <div class="col-lg-9">
+                <section class="mb-5">
+                    <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an
+                        activity of the free human mind. Because it transforms who we are, how we live,
+                        and it gives us an understanding of our place in the universe.</p>
+                    <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as
+                        we know it are everywhere, so there's no reason to think that Earth would be
+                        unique in that regard. Whether of not the life became intelligent is a different
+                        question, and we'll see if we find that.</p>
+                    <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large
+                        enough and carry enough energy into our system to disrupt transportation,
+                        communication, the food chains, and that can be a really bad day on Earth.</p>
+                </section>
+                <section>
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <!-- Comment form-->
+                            <form class="mb-4"><textarea class="form-control" rows="3"
+                                    placeholder="Join the discussion and leave a comment!"></textarea>
+                            </form>
+                            <!-- Comment with nested comments-->
+                            <div class="d-flex mb-4">
+                                <!-- Parent comment-->
+                                <div class="flex-shrink-0"><img class="rounded-circle"
+                                        src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
+                                </div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">Commenter Name</div>
+                                    If you're going to lead a space frontier, it has to be government; it'll
+                                    never be private enterprise. Because the space frontier is dangerous,
+                                    and it's expensive, and it has unquantified risks.
+                                    <!-- Child comment 1-->
+                                    <div class="d-flex mt-4">
+                                        <div class="flex-shrink-0"><img class="rounded-circle"
+                                                src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                        <div class="ms-3">
+                                            <div class="fw-bold">Commenter Name</div>
+                                            And under those conditions, you cannot establish a
+                                            capital-market evaluation of that enterprise. You can't get
+                                            investors.
+                                        </div>
+                                    </div>
+                                    <!-- Child comment 2-->
+                                    <div class="d-flex mt-4">
+                                        <div class="flex-shrink-0"><img class="rounded-circle"
+                                                src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                                        <div class="ms-3">
+                                            <div class="fw-bold">Commenter Name</div>
+                                            When you put money directly to a problem, it makes a good
+                                            headline.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single comment-->
+                            <div class="d-flex">
+                                <div class="flex-shrink-0"><img class="rounded-circle"
+                                        src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
+                                </div>
+                                <div class="ms-3">
+                                    <div class="fw-bold">Commenter Name</div>
+                                    When I look at the universe and all the ways the universe wants to kill
+                                    us, I find it hard to reconcile that with statements of beneficence.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
-    <hr>
-    <div class="row">
-        <div class="col-4 text-center">
-            <a href="/products/1"><img src="https://picsum.photos/250/250" alt="product"></a>
-            <div class="item-info">
-                <p>$ 100</p>
-                <a href="/products/1">
-                    <p>Product 2</p>
-                </a>
-            </div>
-        </div>
-        <div class="col-4 text-center">
-            <a href="/products/1"><img src="https://picsum.photos/250/250" alt="product"></a>
-            <div class="item-info">
-                <p>$ 100</p>
-                <a href="/products/1">
-                    <p>Product 4</p>
-                </a>
-            </div>
-        </div>
-        <div class="col-4 text-center">
-            <a href="/products/1"><img src="https://picsum.photos/250/250" alt="product"></a>
-            <div class="item-info">
-                <p>$ 100</p>
-                <a href="/products/1">
-                    <p>Product 7</p>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+</section>

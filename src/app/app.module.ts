@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/Client/product-list/product-list.component';
-import { ProductDetailComponent } from './components/Client/product-detail/product-detail.component';
 import { HomeComponent } from './components/Client/home/home.component';
 import { ProductsComponent } from './components/Admin/products/products.component';
 import { ProductAddComponent } from './components/Admin/product-add/product-add.component';
@@ -20,6 +19,8 @@ import { CategoriesComponent } from './components/Admin/categories/categories.co
 import { CategoryAddComponent } from './components/Admin/category-add/category-add.component';
 import { CategoryEditComponent } from './components/Admin/category-edit/category-edit.component';
 import { ContactComponent } from './components/Client/contact/contact.component';
+import { PageNotFoundComponent } from './components/Client/page-not-found/page-not-found.component';
+import { ProductDetailComponent } from './components/Client/product-detail/product-detail.component';
 
 @NgModule( {
   declarations: [
@@ -39,7 +40,8 @@ import { ContactComponent } from './components/Client/contact/contact.component'
     CategoriesComponent,
     CategoryAddComponent,
     CategoryEditComponent,
-    ContactComponent
+    ContactComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
