@@ -24,6 +24,8 @@ export class ProductDetailComponent
     this.paramId.paramMap.subscribe( param =>
     {
       const id = Number( param.get( 'id' ) )
+      console.log(id);
+      
       this.productService.getOneProduct( id ).subscribe( data =>
       {
         this.product = data
