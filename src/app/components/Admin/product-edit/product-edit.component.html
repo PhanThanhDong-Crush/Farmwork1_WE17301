@@ -1,22 +1,29 @@
 <div class="container pt-3">
     <h1>Update New Product</h1>
     <form (ngSubmit)="onHandleSubmit()">
-        <div class="mb-3">
-            <select class="form-select" aria-label="Default select example" [(ngModel)]="product.categoryId"
-                name="categoryId">
-                <option *ngFor="let category of category" value="{{category.id}}">{{category.name}}</option>
 
-            </select>
-        </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Product Name:</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="product"
                 [(ngModel)]="product.name" name="name">
         </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Image:</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Image"
+                [(ngModel)]="product.image" name="image">
+        </div>
+
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Price:</label>
             <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="price"
                 [(ngModel)]="product.price" name="price">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Quantity:</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="quantity"
+                [(ngModel)]="product.quantity" name="quantity">
         </div>
 
         <div class="mb-3">
@@ -25,9 +32,21 @@
                 name="description" placeholder="description ..."></textarea>
         </div>
 
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Date Add:</label>
+            <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="dateAdded"
+                [(ngModel)]="product.dateAdded" name="dateAdded" width="100px">
+        </div>
+
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="product.categoryId"
+                name="categoryId" aria-placeholder="Category">
+                <option *ngFor="let category of category" value="{{category.id}}">{{category.name}}</option>
+            </select>
+        </div>
+
 
         <div class="mb-3 text-center">
-            {{product|json}}
             <button type="submit" class="btn btn-primary" *ngIf="product && product.name !=''">Update</button>
         </div>
     </form>

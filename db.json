@@ -48,6 +48,16 @@
       "categoryId": "2",
       "description": "weretrytuy\n\n",
       "id": 7
+    },
+    {
+      "name": "Product 2",
+      "price": 4,
+      "image": "https://i.pinimg.com/564x/c4/b4/77/c4b4779ed711d966ab588636ea8469f8.jpg",
+      "quantity": 2,
+      "description": "eewrtyujiop[]\n\\",
+      "dateAdded": "2023-06-17",
+      "categoryId": "3",
+      "id": 8
     }
   ],
   "categories": [

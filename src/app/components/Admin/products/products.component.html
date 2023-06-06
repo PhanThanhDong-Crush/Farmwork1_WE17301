@@ -2,13 +2,17 @@
     <div class=" pt-2 pb-2">
         <a class="btn btn-primary" routerLink="add" role="button">Add</a>
     </div>
-    <table class="table table-bordered">
+    <table class="table table-bordered text-center">
         <thead>
             <tr>
                 <th>#</th>
                 <th>Name</th>
+                <th>Image</th>
                 <th>Price</th>
+                <th>Quantity</th>
                 <th>Description</th>
+                <th>Date Added</th>
+                <th>Cate</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -16,10 +20,14 @@
             <tr *ngFor="let product of products, index as i">
                 <td>{{i+1}}</td>
                 <td>{{product.name}}</td>
+                <td><img src="{{product.name}}" alt="anh" [width]="100"></td>
                 <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
                 <td>{{product.description}}</td>
+                <td>{{product.dateAdded}}</td>
+                <td>{{product.categoryId}}</td>
                 <td class="text-center d-flex gap-3 justify-content-center ">
-                    <a routerLink="{{product.id}}/edit" class="btn btn-light" role="button">Edit</a>
+                    <a routerLink="{{product.id}}/edit" class="btn btn-warning" role="button">Edit</a>
 
                     <button class="btn btn-danger" (click)="onHandleRemove(product.id)">Delete</button>
                 </td>
