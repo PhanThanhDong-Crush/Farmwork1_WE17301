@@ -15,6 +15,10 @@ export class ProductService
   {
     return this.http.get<IProduct[]>( `http://localhost:3000/products` )
   }
+  getNewProduct (): Observable<IProduct[]>
+  {
+    return this.http.get<IProduct[]>( `http://localhost:8080/api/products-new` )
+  }
 
   getOneProduct ( id: Number | String ): Observable<IProduct>
   {
