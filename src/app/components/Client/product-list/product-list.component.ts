@@ -14,6 +14,10 @@ export class ProductListComponent
   item:any = {
     "data":[]
   }
+  search:any={
+    name:""
+  }
+  searchs:any=[]
   products:IProduct[]=[]
   categories:ICategory[]=[]
   page: number = 1;
@@ -65,7 +69,11 @@ export class ProductListComponent
   }
 
   onHandleSubmit(){
-     this.productServices.seachProduct().subscribe((data)=>console.log(data)
+     this.productServices.seachProduct(this.search).subscribe((data)=>{
+      this.searchs=data
+      console.log(this.searchs[0]);
+      this.products = this.products.filter(p => p._id == this.searchs[0]._id)
+     }   
      )
   }
   
