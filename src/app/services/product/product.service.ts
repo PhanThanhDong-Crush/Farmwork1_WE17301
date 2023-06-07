@@ -13,7 +13,7 @@ export class ProductService
 
   getAllProduct (): Observable<IProduct[]>
   {
-    return this.http.get<IProduct[]>( `http://localhost:3000/products` )
+    return this.http.get<IProduct[]>( `http://localhost:8080/api/products` )
   }
   getNewProduct (): Observable<IProduct[]>
   {
@@ -22,21 +22,21 @@ export class ProductService
 
   getOneProduct ( id: Number | String ): Observable<IProduct>
   {
-    return this.http.get<IProduct>( `http://localhost:3000/products/${ id }` )
+    return this.http.get<IProduct>( `http://localhost:8080/api/products/${ id }` )
   }
 
   addProduct ( product: IProduct ): Observable<IProduct>
   {
-    return this.http.post<IProduct>( `http://localhost:3000/products`, product )
+    return this.http.post<IProduct>( `http://localhost:8080/api/products/add`, product )
   }
 
   editProduct ( product: IProduct ): Observable<IProduct>
   {
-    return this.http.patch<IProduct>( `http://localhost:3000/products/${ product.id }`, product )
+    return this.http.patch<IProduct>( `http://localhost:8080/api/products/edit/${ product._id }`, product )
   }
 
   deleteProduct ( id: Number | String ): Observable<IProduct>
   {
-    return this.http.delete<IProduct>( `http://localhost:3000/products/${ id }` )
+    return this.http.delete<IProduct>( `http://localhost:8080/api/products/${ id }` )
   }
 }
