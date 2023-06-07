@@ -41,7 +41,7 @@
         <div class="mb-3">
             <select class="form-select" aria-label="Default select example" [(ngModel)]="product.categoryId"
                 name="categoryId" aria-placeholder="Category">
-                <option *ngFor="let category of category" value="{{category.id}}">{{category.name}}</option>
+                <option *ngFor="let category of category" value="{{category._id}}">{{category.name}}</option>
             </select>
         </div>
 

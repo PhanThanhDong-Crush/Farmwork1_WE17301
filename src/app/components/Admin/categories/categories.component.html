@@ -16,9 +16,9 @@
                 <td>{{i+1}}</td>
                 <td>{{category.name}}</td>
                 <td class="text-center d-flex gap-3 justify-content-center ">
-                    <a routerLink="{{category.id}}/edit" class="btn btn-light" role="button">Edit</a>
+                    <a routerLink="{{category._id}}/edit" class="btn btn-light" role="button">Edit</a>
 
-                    <button class="btn btn-danger" (click)="onHandleRemove(category.id)">Delete</button>
+                    <button class="btn btn-danger" (click)="onHandleRemove(category._id)">Delete</button>
                 </td>
             </tr>
         </tbody>

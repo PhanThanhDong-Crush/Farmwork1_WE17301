@@ -11,6 +11,9 @@ import { ProductService } from 'src/app/services/product/product.service';
 } )
 export class ProductListComponent
 {
+  item:any = {
+    "data":[]
+  }
   products:IProduct[]=[]
   categories:ICategory[]=[]
   page: number = 1;
@@ -31,7 +34,6 @@ export class ProductListComponent
       this.categories =data
     },err=>console.log(err)
     )
-  }
 
     getRange(): number[] {
     return Array(this.totalPages).fill(0).map((x, i) => i);
@@ -60,6 +62,11 @@ export class ProductListComponent
       }
     }
     this.setPage(this.page)
+  }
+
+  onHandleSubmit(){
+     this.productServices.seachProduct().subscribe((data)=>console.log(data)
+     )
   }
   
 }

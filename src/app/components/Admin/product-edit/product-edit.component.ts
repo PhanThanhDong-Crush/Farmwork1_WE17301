@@ -19,7 +19,7 @@ export class ProductEditComponent {
 
   constructor (private productService:ProductService, private router:Router,private categoryService:CategoryService,private paramId:ActivatedRoute) {
    this.paramId.paramMap.subscribe(param=>{
-    const id = Number(param.get('id'))
+    const id = String(param.get('id'))
     this.productService.getOneProduct(id).subscribe(data=>{
       this.product=data 
     })

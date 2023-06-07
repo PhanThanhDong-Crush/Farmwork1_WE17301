@@ -15,7 +15,7 @@
             </div>
             <div>
                 <h3>Search Product</h3>
-                <form action="">
+                <form (ngSubmit)="onHandleSubmit()">
                     <input type="text" class="form-control" style="width: 170px;">
                     <button class="btn btn-outline-success" type="submit"
                         style="width: 170px; margin-top: 10px;">Search</button>
@@ -27,11 +27,9 @@
 
                 <div class="col-lg-4" *ngFor="let product of products">
                     <div class="position-relative mb-5">
-                        <img class="img-fluid rounded-3 mb-3"
-                            src="https://bizweb.dktcdn.net/thumb/1024x1024/100/310/270/products/158-10e96752-857f-4df3-9e92-cdcfd7765fef.jpg?v=1680163613750"
-                            alt="..." />
+                        <img class="img-fluid rounded-3 mb-3" src="{{product.image}}" alt="..." />
                         <a class="h5 fw-bolder text-decoration-none link-dark stretched-link"
-                            routerLink="/products/{{product.id}}/detail">
+                            routerLink="/products/{{product._id}}/detail">
                             {{product.name}}</a>
                         <span style="color: red; font-weight: 900;"> - {{product.price}}</span>
                     </div>

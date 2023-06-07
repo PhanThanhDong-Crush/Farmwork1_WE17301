@@ -8,18 +8,26 @@ import { ProductService } from 'src/app/services/product/product.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent {
-  products:IProduct[]=[]
+  item:any ={
+    data:[]
+  }
 
+  products:IProduct[]=[]
   constructor (private productServices:ProductService){
     this.productServices.getAllProduct().subscribe(data =>{
-      this.products =data
+      this.item =data
+      this.products=this.item.data
     },err=>console.log(err)
     )
   }
 
   onHandleRemove(id:any){
+    console.log(id);
+    
+    
     this.productServices.deleteProduct(id).subscribe(()=>{
-      this.products = this.products.filter(item => item.id != id)
+      this.products = this.item.data
+       this.products = this.products.filter(pr => pr._id != id)
     },err=>{
       console.log(err);
     })
