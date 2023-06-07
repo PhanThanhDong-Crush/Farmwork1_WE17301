@@ -20,6 +20,11 @@ export class ProductService
     return this.http.get<IProduct[]>( `http://localhost:8080/api/products-new` )
   }
 
+  seachProduct (): Observable<IProduct>
+  {
+    return this.http.get<IProduct>( `http://localhost:8080/api/products-name` )
+  }
+
   getOneProduct ( id: Number | String ): Observable<IProduct>
   {
     return this.http.get<IProduct>( `http://localhost:8080/api/products/${ id }` )

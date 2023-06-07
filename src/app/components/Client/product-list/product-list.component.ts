@@ -11,8 +11,12 @@ import { ProductService } from 'src/app/services/product/product.service';
 } )
 export class ProductListComponent
 {
+  item:any = {
+    "data":[]
+  }
   products:IProduct[]=[]
   categories:ICategory[]=[]
+  
 
   constructor (
       private productServices:ProductService,
@@ -20,7 +24,8 @@ export class ProductListComponent
     ){
       //lấy Product 
     this.productServices.getAllProduct().subscribe(data =>{
-      this.products =data
+      this.item =data
+      this.products =this.item.data
     },err=>console.log(err)
     )
     //Lấy Categories
@@ -28,8 +33,12 @@ export class ProductListComponent
       this.categories =data
     },err=>console.log(err)
     )
+
   }
 
-
+  onHandleSubmit(){
+     this.productServices.seachProduct().subscribe((data)=>console.log(data)
+     )
+  }
   
 }
