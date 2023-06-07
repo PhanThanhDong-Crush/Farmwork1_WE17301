@@ -15,6 +15,10 @@ export class ProductService
   {
     return this.http.get<IProduct[]>( `http://localhost:8080/api/products` )
   }
+  productPagination (page:number): Observable<any>
+  {
+    return this.http.get<any>( `http://localhost:8080/api/products?_page=${page}` )
+  }
   getNewProduct (): Observable<IProduct[]>
   {
     return this.http.get<IProduct[]>( `http://localhost:8080/api/products-new` )

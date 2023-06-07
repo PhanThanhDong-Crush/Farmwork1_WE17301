@@ -20,7 +20,12 @@ a p:hover {
     color: red;
 }
 
-.item-info > p {
+.item-info>p {
     color: red;
     margin-bottom: 5px;
+}
+
+.button_page a {
+    background-color: rgb(104, 172, 240);
+    color: red;
 }
