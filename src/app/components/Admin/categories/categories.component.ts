@@ -20,7 +20,7 @@ export class CategoriesComponent {
 
   onHandleRemove(id:any){
     this.categoryService.deleteCategory(id).subscribe(()=>{
-      this.categories = this.categories.filter(item => item.id != id)
+      this.categories = this.categories.filter(item => item._id != id)
     },err=>{
       console.log(err);
     })

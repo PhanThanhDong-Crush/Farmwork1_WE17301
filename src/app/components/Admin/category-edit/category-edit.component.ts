@@ -15,7 +15,9 @@ export class CategoryEditComponent {
 
   constructor (private categoryService:CategoryService, private router:Router, private route:ActivatedRoute) {
     this.route.paramMap.subscribe(param=>{
-      const id = Number(param.get('id'));
+      const id = String(param.get('id'))
+      console.log(id);
+      
       this.categoryService.getOneCategory(id).subscribe(data=>{
         this.category = data
         
