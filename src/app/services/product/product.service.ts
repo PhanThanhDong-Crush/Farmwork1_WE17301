@@ -37,7 +37,7 @@ export class ProductService
 
   editProduct ( product: IProduct ): Observable<IProduct>
   {
-    return this.http.patch<IProduct>( `http://localhost:8080/api/products/edit/${ product._id }`, product )
+    return this.http.put<IProduct>( `http://localhost:8080/api/products/edit/${ product._id }`, product )
   }
 
   deleteProduct ( id: Number | String ): Observable<IProduct>
