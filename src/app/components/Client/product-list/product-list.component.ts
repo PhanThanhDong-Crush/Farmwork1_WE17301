@@ -18,23 +18,23 @@ export class ProductListComponent
   categories:ICategory[]=[]
   page: number = 1;
   totalPages: number = 1;
-  constructor (
-      private productServices:ProductService,
-      private categoryService:CategoryService
-    ){
-      //lấy Product 
+  constructor(
+    private productServices: ProductService,
+    private categoryService: CategoryService
+  ) {
+    //lấy Product 
     this.productServices.productPagination(this.page).subscribe(data => {
       const product = data.data
       this.totalPages = data.totalPages
       this.products = product
-    },err=>console.log(err)
+    }, err => console.log(err)
     )
     //Lấy Categories
-    this.categoryService.getAllCategory().subscribe(data =>{
-      this.categories =data
-    },err=>console.log(err)
+    this.categoryService.getAllCategory().subscribe(data => {
+      this.categories = data
+    }, err => console.log(err)
     )
-
+  }
     getRange(): number[] {
     return Array(this.totalPages).fill(0).map((x, i) => i);
   }
