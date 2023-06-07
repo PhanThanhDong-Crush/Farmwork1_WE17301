@@ -13,26 +13,26 @@ export class CategoryService
 
   getAllCategory (): Observable<ICategory[]>
   {
-    return this.http.get<ICategory[]>( `http://localhost:3000/categories` )
+    return this.http.get<ICategory[]>( `http://localhost:8080/api/categories` )
   }
 
   getOneCategory ( id: Number | String ): Observable<ICategory>
   {
-    return this.http.get<ICategory>( `http://localhost:3000/categories/${ id }` )
+    return this.http.get<ICategory>( `http://localhost:8080/api/categories/${ id }` )
   }
 
   addCategory ( category: ICategory ): Observable<ICategory>
   {
-    return this.http.post<ICategory>( `http://localhost:3000/categories`, category )
+    return this.http.post<ICategory>( `http://localhost:8080/api/categories`, category )
   }
 
   editCategory ( category: ICategory ): Observable<ICategory>
   {
-    return this.http.patch<ICategory>( `http://localhost:3000/categories/${ category.id }`, category )
+    return this.http.patch<ICategory>( `http://localhost:8080/api/categories/${ category.id }`, category )
   }
 
   deleteCategory ( id: Number | String ): Observable<ICategory>
   {
-    return this.http.delete<ICategory>( `http://localhost:3000/categories/${ id }` )
+    return this.http.delete<ICategory>( `http://localhost:8080/api/categories/${ id }` )
   }
 }
