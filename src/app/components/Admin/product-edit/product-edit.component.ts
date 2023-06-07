@@ -31,6 +31,8 @@ export class ProductEditComponent {
 
   onHandleSubmit(){
     this.productService.editProduct(this.product).subscribe(()=>{
+      console.log(this.product);
+      
       this.router.navigateByUrl('/admin/products')
     })
   }
