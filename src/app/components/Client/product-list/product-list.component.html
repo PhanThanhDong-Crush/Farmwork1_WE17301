@@ -9,7 +9,7 @@
                 <h3>Category</h3>
                 <!-- Đổ dữ liệu ra trang -->
                 <ul *ngFor="let category of categories">
-                    <li><a href="#">{{category.name}}</a></li>
+                    <li><a routerLink="{{category.name}}/detail">{{category.name}}</a></li>
 
                 </ul>
             </div>

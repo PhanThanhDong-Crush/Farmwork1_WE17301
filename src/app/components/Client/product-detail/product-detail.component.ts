@@ -12,7 +12,10 @@ import { ProductService } from 'src/app/services/product/product.service';
 } )
 export class ProductDetailComponent
 {
-
+  item:any={
+    "data":[]
+  }
+  products:IProduct[]=[]
   product: IProduct = {
     name: "",
     price: 0
@@ -21,10 +24,10 @@ export class ProductDetailComponent
 
   constructor ( private productService: ProductService, private router: Router, private categoryService: CategoryService, private paramId: ActivatedRoute )
   {
+    
     this.paramId.paramMap.subscribe( param =>
     {
-      const id = Number( param.get( 'id' ) )
-      console.log(id);
+      const id = String( param.get( 'id' ) )
       
       this.productService.getOneProduct( id ).subscribe( data =>
       {
@@ -35,6 +38,12 @@ export class ProductDetailComponent
     {
       this.category = cate
     } )
+    this.productService.getAllProduct().subscribe(daa=>{
+      this.item =daa
+      this.products =this.item.data
+      this.products = this.products.filter(p=>p.categoryId == this.product.categoryId)
+    })
+    
   }
 
   onHandleSubmit ()
