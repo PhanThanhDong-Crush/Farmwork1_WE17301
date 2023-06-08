@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ICategory } from 'src/app/interfaces/category';
 import { IProduct } from 'src/app/interfaces/product';
+import { CategoryService } from 'src/app/services/category/category.service';
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
@@ -11,9 +14,9 @@ export class ProductsComponent {
   item:any ={
     data:[]
   }
-
+  category: ICategory[]=[]
   products:IProduct[]=[]
-  constructor (private productServices:ProductService){
+  constructor (private productServices:ProductService, private categoryServices: CategoryService,private router:Router,private paramId:ActivatedRoute){
     this.productServices.getAllProduct().subscribe(data =>{
       this.item =data
       this.products=this.item.data
