@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ICategory } from 'src/app/interfaces/category';
 import { IProduct } from 'src/app/interfaces/product';
 import { CategoryService } from 'src/app/services/category/category.service';
@@ -9,7 +10,7 @@ import { ProductService } from 'src/app/services/product/product.service';
   templateUrl: './product-list.component.html',
   styleUrls: [ './product-list.component.scss' ]
 } )
-export class ProductListComponent
+export class ProductListComponent implements OnInit
 {
   item:any = {
     "data":[]
@@ -21,11 +22,14 @@ export class ProductListComponent
   searchs:any=[]
   products:any[]=[]
   categories:ICategory[]=[]
+  categoryId: string = "";
+  categoryName: string ="";
   page: number = 1;
   totalPages: number = 1;
   constructor(
     private productServices: ProductService,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private route: ActivatedRoute
   ) {
     //lấy Product 
     this.productServices.productPagination(this.page).subscribe(data => {
@@ -39,10 +43,13 @@ export class ProductListComponent
       this.categories = data
     }, err => console.log(err)
     )
+
+    
   }
     getRange(): number[] {
     return Array(this.totalPages).fill(0).map((x, i) => i);
   }
+
 
   setPage(i: number) {
     this.page = i
@@ -67,6 +74,23 @@ export class ProductListComponent
       }
     }
     this.setPage(this.page)
+  }
+
+  ngOnInit(): void {
+    // Lấy danh sách tất cả categories
+    this.categoryService.getAllCategory().subscribe(data => {
+      this.categories = data;
+    }, err => console.log(err));
+  }
+  
+  handleCategoryClick(categoryId: any) {
+    // Lấy danh sách sản phẩm tương ứng với category đó
+    this.categoryService.getProductsByCategoryId(categoryId).subscribe(data => {
+      this.products = data.products;
+      console.log(data);
+      
+    }, err => console.log(err));
+    
   }
 
   onHandleSubmit(){

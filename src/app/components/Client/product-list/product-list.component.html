@@ -8,10 +8,12 @@
 
                 <h3>Category</h3>
                 <!-- Đổ dữ liệu ra trang -->
-                <ul *ngFor="let category of categories">
-                    <li><a routerLink="{{category.name}}/detail">{{category.name}}</a></li>
+                <ul *ngFor="let category of categories" >
+                    <li (click)=" handleCategoryClick(category._id)"><a href="#" >{{category.name}}</a></li>
 
                 </ul>
+               
+                
             </div>
             <div>
                 <h3>Search Product</h3>
