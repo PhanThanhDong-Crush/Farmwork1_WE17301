@@ -17,8 +17,9 @@ export class ProductListComponent
   search:any={
     name:""
   }
+  sortAscending: boolean = true;
   searchs:any=[]
-  products:IProduct[]=[]
+  products:any[]=[]
   categories:ICategory[]=[]
   page: number = 1;
   totalPages: number = 1;
@@ -76,5 +77,21 @@ export class ProductListComponent
      }   
      )
   }
-  
+    getProducts(): void {
+      this.productServices.reduceProduct().subscribe(
+        (response) => {
+          this.products = response;
+          this.sortProduct()
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+      }
+      sortProduct(){
+        this.sortAscending = !this.sortAscending;
+    this.products = this.products.slice().sort((a, b) => {
+      return this.sortAscending ? a.price - b.price : b.price - a.price;
+    });
+      }
 }
