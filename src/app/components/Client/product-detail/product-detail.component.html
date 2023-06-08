@@ -8,19 +8,13 @@
         <section class="py-5 bg-light" id="scroll-target">
             <div class="container px-5 my-5">
                 <div class="row gx-5 align-items-center">
-                    <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0"
-                            src="https://dony.vn/wp-content/uploads/2021/08/mau-quan-vay-nu-dep-ban-chay-2.jpg"
+                    <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="{{product.image}}"
                             alt="..." /></div>
                     <div class="col-lg-6">
-                        <h2 class="fw-bolder">Product name</h2>
-                        <li>Date add</li>
+                        <h2 class="fw-bolder">{{product.name}}</h2>
+                        <li>{{product.dateAdded}}</li>
                         <br>
-                        <p class="lead fw-normal text-muted mb-0">Description: Lorem ipsum dolor sit amet
-                            consectetur
-                            adipisicing elit. Iusto
-                            est, ut esse a labore aliquam beatae expedita. Blanditiis impedit numquam libero
-                            molestiae et fugit
-                            cupiditate, quibusdam expedita, maiores eaque quisquam.</p>
+                        <p class="lead fw-normal text-muted mb-0">Description: {{product.description}}</p>
                         <figure class="mb-4 d-flex" style="margin-top: 150px;">
                             <form>
                                 <p>Quantity</p>
@@ -119,78 +113,28 @@
             </div>
         </div>
         <div class="row gx-5">
-            <div class="col-lg-4 mb-5">
+            <div class="col-lg-4 mb-5" *ngFor="let prod of products">
                 <div class="card h-100 shadow border-0">
-                    <img class="card-img-top"
-                        src="https://bucket.nhanh.vn/f06edc-11055/ps/20210410_KePxInh79rnJmqNqeuVqtyI7.jpg" alt="..." />
+                    <img class="card-img-top" src="{{prod.image}}" alt="..." />
                     <div class="card-body p-4">
                         <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                         <a class="text-decoration-none link-dark stretched-link" href="#!">
-                            <h5 class="card-title mb-3">Product Name</h5>
+                            <h5 class="card-title mb-3">{{prod.name}}</h5>
                         </a>
-                        <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive
-                            height of each card. Some quick example text to build on the card title and make
-                            up the bulk of the card's content.</p>
+                        <p class="card-text mb-0">{{prod.description}}</p>
                     </div>
                     <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                         <div class="d-flex align-items-end justify-content-between">
                             <div class="d-flex align-items-center">
                                 <div class="small">
-                                    <div class="text-muted">March 23, 2023 &middot; 4 min read</div>
+                                    <div class="text-muted">{{prod.dateAdded}} &middot; 4 min read</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mb-5">
-                <div class="card h-100 shadow border-0">
-                    <img class="card-img-top"
-                        src="https://bucket.nhanh.vn/f06edc-11055/ps/20210410_KePxInh79rnJmqNqeuVqtyI7.jpg" alt="..." />
-                    <div class="card-body p-4">
-                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                        <a class="text-decoration-none link-dark stretched-link" href="#!">
-                            <h5 class="card-title mb-3">Product Name</h5>
-                        </a>
-                        <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive
-                            height of each card. Some quick example text to build on the card title and make
-                            up the bulk of the card's content.</p>
-                    </div>
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <div class="small">
-                                    <div class="text-muted">March 23, 2023 &middot; 4 min read</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 mb-5">
-                <div class="card h-100 shadow border-0">
-                    <img class="card-img-top"
-                        src="https://bucket.nhanh.vn/f06edc-11055/ps/20210410_KePxInh79rnJmqNqeuVqtyI7.jpg" alt="..." />
-                    <div class="card-body p-4">
-                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                        <a class="text-decoration-none link-dark stretched-link" href="#!">
-                            <h5 class="card-title mb-3">Product Name</h5>
-                        </a>
-                        <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive
-                            height of each card. Some quick example text to build on the card title and make
-                            up the bulk of the card's content.</p>
-                    </div>
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <div class="small">
-                                    <div class="text-muted">March 23, 2023 &middot; 4 min read</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
         <!-- Call to action-->
         <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
