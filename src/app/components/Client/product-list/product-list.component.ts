@@ -96,8 +96,7 @@ export class ProductListComponent implements OnInit
   onHandleSubmit(){
      this.productServices.seachProduct(this.search).subscribe((data)=>{
       this.searchs=data
-      console.log(this.searchs[0]);
-      this.products = this.products.filter(p => p._id == this.searchs[0]._id)
+      this.products = this.searchs
      }   
      )
   }
