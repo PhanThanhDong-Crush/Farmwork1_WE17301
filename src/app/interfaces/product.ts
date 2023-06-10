@@ -7,5 +7,6 @@ export interface IProduct
     quantity?: number,
     description?: string,
     dateAdded?: string,
-    categoryId?: string|number
+    categoryId?: string|number,
+    cateName?:string
 }
