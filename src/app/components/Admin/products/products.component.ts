@@ -15,13 +15,46 @@ export class ProductsComponent {
     data:[]
   }
   category: ICategory[]=[]
-  products:IProduct[]=[]
+  products: IProduct[] = []
+    page: number = 1;
+  totalPages: number = 1;
+  
   constructor (private productServices:ProductService, private categoryServices: CategoryService,private router:Router,private paramId:ActivatedRoute){
-    this.productServices.getAllProduct().subscribe(data =>{
-      this.item =data
-      this.products=this.item.data
+    this.productServices.productPagination(this.page).subscribe(data => {
+      const product = data.data
+      this.totalPages = data.totalPages
+      this.products = product
+    }, err => console.log(err)
+    )
+  }
+    getRange(): number[] { //phân trang
+    return Array(this.totalPages).fill(0).map((x, i) => i);
+  }
+
+
+  setPage(i: number) { //phân trang
+    this.page = i
+    
+    this.productServices.productPagination(this.page).subscribe(data => {
+      const product = data.data
+      this.products = product
     },err=>console.log(err)
     )
+  }
+
+  PreviousNext(a: string) { //phân trang
+    if (a == "Previous") {
+      this.page = this.page - 1
+      if (this.page < 1) {
+        this.page = 1
+      }
+    } else {
+      this.page = this.page + 1
+      if (this.page > this.totalPages) {
+        this.page = this.totalPages
+      }
+    }
+    this.setPage(this.page)
   }
 
   onHandleRemove(id:any){
