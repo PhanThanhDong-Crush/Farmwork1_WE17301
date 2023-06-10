@@ -24,6 +24,7 @@ export class ProductsComponent {
       const product = data.data
       this.totalPages = data.totalPages
       this.products = product
+      this.category = product
     }, err => console.log(err)
     )
   }
