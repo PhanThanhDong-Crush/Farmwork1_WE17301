@@ -22,6 +22,9 @@ export class ProductService
   {
     return this.http.get<any>( `http://localhost:8080/api/products?_page=${page}` )
   }
+  getRelatedProducts(id:number|string):Observable<IProduct>{
+    return this.http.get<IProduct>(`http://localhost:8080/api/products-relate/${id}`)
+  }
   
   getNewProduct (): Observable<IProduct[]>
   {
