@@ -15,3 +15,18 @@
     background-repeat: no-repeat;
     min-height: 15rem;
 }
+
+.card-img-top {
+    width: 376px;
+    height: 479px;
+}
+
+.card-text {
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
