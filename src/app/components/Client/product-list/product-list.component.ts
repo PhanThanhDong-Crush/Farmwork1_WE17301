@@ -46,12 +46,12 @@ export class ProductListComponent implements OnInit
 
     
   }
-    getRange(): number[] {
+    getRange(): number[] { //phân trang
     return Array(this.totalPages).fill(0).map((x, i) => i);
   }
 
 
-  setPage(i: number) {
+  setPage(i: number) { //phân trang
     this.page = i
     
     this.productServices.productPagination(this.page).subscribe(data => {
@@ -61,7 +61,7 @@ export class ProductListComponent implements OnInit
     )
   }
 
-  PreviousNext(a: string) {
+  PreviousNext(a: string) { //phân trang
     if (a == "Previous") {
       this.page = this.page - 1
       if (this.page < 1) {
