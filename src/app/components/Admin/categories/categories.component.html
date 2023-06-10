@@ -1,6 +1,6 @@
 <div class="container">
     <div class=" pt-2 pb-2">
-        <a class="btn btn-primary" routerLink="add" role="button">Add</a>
+        <a class="btn btn-primary" routerLink="add" role="button">Add category</a>
     </div>
     <table class="table table-bordered">
         <thead>
@@ -16,7 +16,7 @@
                 <td>{{i+1}}</td>
                 <td>{{category.name}}</td>
                 <td class="text-center d-flex gap-3 justify-content-center ">
-                    <a routerLink="{{category._id}}/edit" class="btn btn-light" role="button">Edit</a>
+                    <a routerLink="{{category._id}}/edit" class="btn btn-warning" role="button">Edit</a>
 
                     <button class="btn btn-danger" (click)="onHandleRemove(category._id)">Delete</button>
                 </td>

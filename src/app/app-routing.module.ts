@@ -34,7 +34,7 @@ const routes: Routes = [
   {
     path: 'admin', component: LayoutAdminComponent, children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent },
+      { path: 'dashboard', component: ProductsComponent },
       { path: 'category', component: CategoriesComponent },
       { path: 'category/add', component: CategoryAddComponent },
       { path: 'category/:id/edit', component: CategoryEditComponent },

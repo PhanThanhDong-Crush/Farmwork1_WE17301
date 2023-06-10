@@ -1,6 +1,6 @@
 <div class="container">
     <div class=" pt-2 pb-2">
-        <a class="btn btn-primary" routerLink="add" role="button">Add</a>
+        <a class="btn btn-primary" routerLink="add" role="button">Add Product</a>
     </div>
     <table class="table table-bordered text-center">
         <thead>
@@ -10,7 +10,6 @@
                 <th>Image</th>
                 <th>Price</th>
                 <th>Quantity</th>
-                <th>Description</th>
                 <th>Date Added</th>
                 <th>Cate</th>
                 <th>Action</th>
@@ -21,10 +20,9 @@
                 <td>{{i+1}}</td>
                 <td>{{product.name}}</td>
                 <td><img src="{{product.image}}" alt="anh" [width]="100"></td>
-                <td>{{product.price}}</td>
+                <td style="color: red; font-weight: 700;">{{product.price}} VNĐ</td>
                 <td>{{product.quantity}}</td>
-                <td>{{product.description}}</td>
-                <td>{{product.dateAdded}}</td>
+                <td style="width: 10%;">{{product.dateAdded}}</td>
                 <td>{{product._id}}</td>
                 <td class="text-center d-flex gap-3 justify-content-center ">
                     <a routerLink="{{product._id}}/edit" class="btn btn-warning" role="button">Edit</a>
