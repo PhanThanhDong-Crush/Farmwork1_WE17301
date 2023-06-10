@@ -12,10 +12,10 @@
                             alt="..." /></div>
                     <div class="col-lg-6">
                         <h2 class="fw-bolder">{{product.name}}</h2>
-                        <li>{{product.dateAdded}}</li>
+                        <li>{{product.dateAdded}} - <span>Quantity: {{product.quantity}}</span></li>
+                        <h3 style="margin: 30px 0; color: red;">{{product.price}} VNĐ</h3>
                         <br>
-                        <p class="lead fw-normal text-muted mb-0">Description: {{product.description}}</p>
-                        <figure class="mb-4 d-flex" style="margin-top: 150px;">
+                        <figure class="mb-4 d-flex">
                             <form>
                                 <p>Quantity</p>
                                 <input type="number" name="quantity" class="form-control" [min]="1" [max]="100"
@@ -23,139 +23,88 @@
                                 <button class="btn btn-dark" id="cart">Add To Cart</button>
                             </form>
                         </figure>
+                        <section class="mb-5">
+                            <p class="mb-4" style="font-size: 15px;">{{product.description}}</p>
+                        </section>
                     </div>
 
                 </div>
             </div>
         </section>
-        <div class="row gx-5">
-            <div class="col-lg-9">
-                <section class="mb-5">
-                    <p class="fs-5 mb-4">Science is an enterprise that should be cherished as an
-                        activity of the free human mind. Because it transforms who we are, how we live,
-                        and it gives us an understanding of our place in the universe.</p>
-                    <p class="fs-5 mb-4">The universe is large and old, and the ingredients for life as
-                        we know it are everywhere, so there's no reason to think that Earth would be
-                        unique in that regard. Whether of not the life became intelligent is a different
-                        question, and we'll see if we find that.</p>
-                    <p class="fs-5 mb-4">If you get asteroids about a kilometer in size, those are large
-                        enough and carry enough energy into our system to disrupt transportation,
-                        communication, the food chains, and that can be a really bad day on Earth.</p>
-                </section>
-                <section>
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <!-- Comment form-->
-                            <form class="mb-4"><textarea class="form-control" rows="3"
-                                    placeholder="Join the discussion and leave a comment!"></textarea>
-                            </form>
-                            <!-- Comment with nested comments-->
-                            <div class="d-flex mb-4">
-                                <!-- Parent comment-->
-                                <div class="flex-shrink-0"><img class="rounded-circle"
-                                        src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
-                                </div>
-                                <div class="ms-3">
-                                    <div class="fw-bold">Commenter Name</div>
-                                    If you're going to lead a space frontier, it has to be government; it'll
-                                    never be private enterprise. Because the space frontier is dangerous,
-                                    and it's expensive, and it has unquantified risks.
-                                    <!-- Child comment 1-->
-                                    <div class="d-flex mt-4">
-                                        <div class="flex-shrink-0"><img class="rounded-circle"
-                                                src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                        <div class="ms-3">
-                                            <div class="fw-bold">Commenter Name</div>
-                                            And under those conditions, you cannot establish a
-                                            capital-market evaluation of that enterprise. You can't get
-                                            investors.
-                                        </div>
-                                    </div>
-                                    <!-- Child comment 2-->
-                                    <div class="d-flex mt-4">
-                                        <div class="flex-shrink-0"><img class="rounded-circle"
-                                                src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                        <div class="ms-3">
-                                            <div class="fw-bold">Commenter Name</div>
-                                            When you put money directly to a problem, it makes a good
-                                            headline.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Single comment-->
-                            <div class="d-flex">
-                                <div class="flex-shrink-0"><img class="rounded-circle"
-                                        src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
-                                </div>
-                                <div class="ms-3">
-                                    <div class="fw-bold">Commenter Name</div>
-                                    When I look at the universe and all the ways the universe wants to kill
-                                    us, I find it hard to reconcile that with statements of beneficence.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
     </div>
 </section>
-<section class="py-5">
+<section class="py-5" class="sanphammoi">
     <div class="container px-5 my-5">
-        <div class="row gx-5 justify-content-center">
-            <div class="col-lg-8 col-xl-6">
-                <div class="text-center">
-                    <h2 class="fw-bolder">Similar products</h2>
-                    <p class="lead fw-normal text-muted mb-5">Here are our latest, hottest trio of products, with
-                        vibrant, dynamic textures and styles. Click for more details.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row gx-5">
-            <div class="col-lg-4 mb-5" *ngFor="let prod of products">
-                <div class="card h-100 shadow border-0">
-                    <img class="card-img-top" src="{{prod.image}}" alt="..." />
-                    <div class="card-body p-4">
-                        <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                        <a class="text-decoration-none link-dark stretched-link" href="#!">
-                            <h5 class="card-title mb-3">{{prod.name}}</h5>
-                        </a>
-                        <p class="card-text mb-0">{{prod.description}}</p>
+        <!-- Call to action-->
+        <section class="py-5">
+            <div class="container px-5 my-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="text-center">
+                            <h2 class="fw-bolder">Featured products</h2>
+                            <p class="lead fw-normal text-muted mb-5">Here are our latest, hottest trio of products,
+                                with
+                                vibrant, dynamic textures and styles. Click for more details.</p>
+                        </div>
                     </div>
-                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
-                        <div class="d-flex align-items-end justify-content-between">
-                            <div class="d-flex align-items-center">
-                                <div class="small">
-                                    <div class="text-muted">{{prod.dateAdded}} &middot; 4 min read</div>
+                </div>
+                <div class="row gx-5">
+                    <div class="col-lg-4 mb-5" *ngFor="let product of item3.data ">
+                        <div class="card h-100 shadow border-0">
+                            <img class="card-img-top" src="{{product.image}}" alt="..." />
+                            <div class="card-body p-4">
+                                <a class="text-decoration-none link-dark stretched-link"
+                                    routerLink="/products/{{product._id}}/detail">
+                                    <h5 class="card-title mb-3">{{product.name}} - <span
+                                            style="color: red;">{{product.price}}</span>
+                                    </h5>
+                                </a>
+                                <p class="card-text mb-0">{{product.description}}</p>
+                            </div>
+                            <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                                <div class="d-flex align-items-end justify-content-between">
+                                    <div class="d-flex align-items-center">
+                                        <div class="small">
+                                            <div class="text-muted">{{product.dateAdded}} &middot; 4 min read</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-        </div>
-        <!-- Call to action-->
-        <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
-            <div
-                class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
-                <div class="mb-4 mb-xl-0">
-                    <div class="fs-3 fw-bold text-white">New products, delivered to you.</div>
-                    <div class="text-white-50">Sign up for our newsletter for the latest updates.</div>
-                </div>
-                <div class="ms-xl-4">
-                    <div class="input-group mb-2">
-                        <input class="form-control" type="text" placeholder="Email address..."
-                            aria-label="Email address..." aria-describedby="button-newsletter" />
-                        <button class="btn btn-outline-light" id="button-newsletter" type="button"
-                            routerLink="/signup">Sign
-                            up</button>
+                <!-- Call to action-->
+                <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <div class="text-center">
+                                <h2 class="fw-bolder">Similar products</h2>
+                                <p class="lead fw-normal text-muted mb-5">Here are our latest, hottest trio of products,
+                                    with
+                                    vibrant, dynamic textures and styles. Click for more details.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="small text-white-50">We care about privacy, and will never share your data.
+                    <div
+                        class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
+                        <div class="mb-4 mb-xl-0">
+                            <div class="fs-3 fw-bold text-white">New products, delivered to you.</div>
+                            <div class="text-white-50">Sign up for our newsletter for the latest updates.</div>
+                        </div>
+                        <div class="ms-xl-4">
+                            <div class="input-group mb-2">
+                                <input class="form-control" type="text" placeholder="Email address..."
+                                    aria-label="Email address..." aria-describedby="button-newsletter" />
+                                <button class="btn btn-outline-light" id="button-newsletter" type="button"
+                                    routerLink="/signup">Sign
+                                    up</button>
+                            </div>
+                            <div class="small text-white-50">We care about privacy, and will never share your data.
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </aside>
             </div>
-        </aside>
+        </section>
     </div>
 </section>

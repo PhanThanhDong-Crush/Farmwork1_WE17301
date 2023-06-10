@@ -21,6 +21,9 @@ export class ProductDetailComponent
     price: 0
   }
   category: ICategory[] = []
+   item3:any = {
+    data:[]
+  }
 
   constructor ( private productService: ProductService, private router: Router, private categoryService: CategoryService, private paramId: ActivatedRoute )
   {
@@ -43,7 +46,10 @@ export class ProductDetailComponent
       this.products =this.item.data
       this.products = this.products.filter(p=>p.categoryId == this.product.categoryId)
     })
-    
+    this.productService.getNewProduct().subscribe((data) =>{
+      this.item3=data;
+    },err=>console.log(err)
+    )
   }
 
   onHandleSubmit ()

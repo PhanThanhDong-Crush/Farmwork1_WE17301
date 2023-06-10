@@ -8,44 +8,40 @@
 
                 <h3>Category</h3>
                 <!-- Đổ dữ liệu ra trang -->
-                <ul *ngFor="let category of categories" >
-                    <li (click)=" handleCategoryClick(category._id)"><a href="#" >{{category.name}}</a></li>
+                <ul *ngFor="let category of categories">
+                    <li (click)=" handleCategoryClick(category._id)"><a href="#">{{category.name}}</a></li>
 
                 </ul>
-               
-                
+
+
             </div>
-            <div>
+            <div style="margin-top: 50px;">
                 <h3>Search Product</h3>
-                <form (ngSubmit)="onHandleSubmit()">
-                    <input type="text" class="form-control" style="width: 170px;" [(ngModel)]="search.name" name="name">
+                <form (ngSubmit)="onHandleSubmit()" style="display: flex;">
+                    <input type="text" class="form-control" style="width: 120px;" [(ngModel)]="search.name" name="name"
+                        placeholder="name">
                     <button class="btn btn-outline-success" type="submit"
-                        style="width: 170px; margin-top: 10px;">Search</button>
+                        style="width: 70px;">Search</button>
 
                 </form>
             </div>
-            <div>
-                <button (click)="sortProduct()" style="width: 170px; margin-top: 10px;">
-                Xắp xếp theo giá {{ sortAscending ? 'tăng dần' : 'giảm dần' }}
+            <div style="margin-top: 50px;">
+                <h3>Arrange</h3>
+                <button (click)="sortProduct()" style="width: 170px; margin-top: 10px;" class="btn btn-warning">
+                    Prices go {{ sortAscending ? 'down ⬇️' : 'up ⬆️' }}
                 </button>
-
-                <!-- <ul>
-                <li *ngFor="let product of sortedProducts">
-                    {{ product.name }} - {{ product.price }}
-                </li>
-                </ul> -->
             </div>
         </div>
         <div class="col-8" style="margin-left: 30px; margin-bottom: 50px;">
             <div class="row gx-5">
 
                 <div class="col-lg-4" *ngFor="let product of products">
-                    <div  class="position-relative mb-5">
+                    <div class="position-relative mb-5">
                         <img class="img-fluid rounded-3 mb-3" src="{{product.image}}" alt="..." />
                         <a class="h5 fw-bolder text-decoration-none link-dark stretched-link"
                             routerLink="/products/{{product._id}}/detail">
-                            {{product.name}}</a>
-                        <span style="color: red; font-weight: 900;"> - {{product.price}}</span>
+                            {{product.name}}</a> <br>
+                        <span style="color: red; font-weight: 900;"> - {{product.price}} VNĐ</span>
                     </div>
                 </div>
 
