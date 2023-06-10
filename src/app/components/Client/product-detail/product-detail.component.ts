@@ -36,20 +36,20 @@ export class ProductDetailComponent
       {
         this.product = data
       } )
+      this.productService.getRelatedProducts(id).subscribe(data=>{
+        
+        this.item = data
+        
+      }
+      
+      )
     } )
     this.categoryService.getAllCategory().subscribe( cate =>
     {
       this.category = cate
     } )
-    this.productService.getAllProduct().subscribe(daa=>{
-      this.item =daa
-      this.products =this.item.data
-      this.products = this.products.filter(p=>p.categoryId == this.product.categoryId)
-    })
-    this.productService.getNewProduct().subscribe((data) =>{
-      this.item3=data;
-    },err=>console.log(err)
-    )
+    
+   
   }
 
   onHandleSubmit ()
