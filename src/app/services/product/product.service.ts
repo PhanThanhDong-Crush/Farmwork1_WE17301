@@ -15,6 +15,10 @@ export class ProductService
   {
     return this.http.get<IProduct[]>( `http://localhost:8080/api/products` )
   }
+  getProductsByPriceRange (min: number, max: number): Observable<IProduct[]>
+  {
+    return this.http.get<IProduct[]>( `http://localhost:8080/api/products-price-range?price_min=${min}&price_max=${max}` )
+  }
   reduceProduct (): Observable<any>{
     return this.http.get<any>( `http://localhost:8080/api/products` )
   }
@@ -31,9 +35,9 @@ export class ProductService
     return this.http.get<IProduct[]>( `http://localhost:8080/api/products-new` )
   }
 
-  seachProduct (product:any): Observable<IProduct>
+  seachProduct (product:any): Observable<IProduct[]>
   {
-    return this.http.post<IProduct>( `http://localhost:8080/api/products-name`,product)
+    return this.http.post<IProduct[]>( `http://localhost:8080/api/products-name`,product)
   }
 
   getOneProduct ( id: Number | String ): Observable<IProduct>

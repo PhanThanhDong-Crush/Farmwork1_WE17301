@@ -46,7 +46,7 @@ export class ProductListComponent implements OnInit
 
     
   }
-    getRange(): number[] { //phân trang
+  getRange(): number[] { //phân trang
     return Array(this.totalPages).fill(0).map((x, i) => i);
   }
 
@@ -93,14 +93,17 @@ export class ProductListComponent implements OnInit
     
   }
 
-  onHandleSubmit(){
-     this.productServices.seachProduct(this.search).subscribe((data)=>{
-      this.searchs=data
+  onHandleSubmit(){ //tìm kiếm sản phẩm
+    this.productServices.seachProduct(this.search).subscribe((data) => {
+      if (data.length == 0) {
+        alert(`Không tìm thấy sản phẩm nào với từ khóa "${this.search.name}"`)
+      }
       this.products = this.searchs
      }   
      )
   }
-    getProducts(): void {
+
+  getProducts(): void { //sap xep 
       this.productServices.reduceProduct().subscribe(
         (response) => {
           this.products = response;
@@ -113,8 +116,18 @@ export class ProductListComponent implements OnInit
       }
       sortProduct(){
         this.sortAscending = !this.sortAscending;
-    this.products = this.products.slice().sort((a, b) => {
+        this.products = this.products.slice().sort((a, b) => {
       return this.sortAscending ? a.price - b.price : b.price - a.price;
     });
+  }
+  
+  ByPriceRange(min: number, max: number) //loc khoang gia
+  {
+    this.productServices.getProductsByPriceRange(min, max).subscribe((data: any) => {   
+      if (data.data.length == 0) {
+        alert(`Không tìm thấy sản phẩm nào với từ khóa "${this.search.name}"`)
       }
+        this.products = data.data
+      })
+  }
 }

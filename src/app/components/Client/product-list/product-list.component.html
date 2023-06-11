@@ -8,9 +8,11 @@
 
                 <h3>Category</h3>
                 <!-- Đổ dữ liệu ra trang -->
+                <ul>
+                    <li><a href="/products">Tất cả sản phẩm</a></li>
+                </ul>
                 <ul *ngFor="let category of categories">
                     <li (click)=" handleCategoryClick(category._id)"><a href="#">{{category.name}}</a></li>
-
                 </ul>
 
 
@@ -30,6 +32,35 @@
                 <button (click)="sortProduct()" style="width: 170px; margin-top: 10px;" class="btn btn-warning">
                     Prices go {{ sortAscending ? 'down ⬇️' : 'up ⬆️' }}
                 </button>
+            </div>
+            <div style="margin-top: 50px;">
+                <h3>Mức giá</h3>
+
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <input class="checkbox-input me-1" type="radio" name="price" value="" aria-label="..."
+                            (click)="ByPriceRange(1000000,1500000)" />
+                        1000.000đ - 1500.000đ
+                    </li>
+                    <li class="list-group-item">
+                        <input class="checkbox-input me-1" type="radio" name="price" value="" aria-label="..."
+                            (click)="ByPriceRange(1500000,2000000)" />
+                        1500.000đ - 2000.000đ
+                    </li>
+                    <li class="list-group-item">
+
+                        <input class="checkbox-input me-1" type="radio" name="price" value="" aria-label="..."
+                            (click)="ByPriceRange(2500000,3000000)" />
+                        2500.000đ - 3000.000đ
+
+                    </li>
+                    <li class="list-group-item">
+                        <input class="checkbox-input me-1" type="radio" name="price" value="" aria-label="..."
+                            (click)="ByPriceRange(3500000,4000000)" />
+                        3500.000đ - 4000.000đ
+                    </li>
+                </ul>
+
             </div>
         </div>
         <div class="col-8" style="margin-left: 30px; margin-bottom: 50px;">
