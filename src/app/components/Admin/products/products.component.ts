@@ -59,14 +59,14 @@ export class ProductsComponent {
   }
 
   onHandleRemove(id:any){
-    console.log(id);
-    
-    
+    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")) {
+    console.log(id)  
     this.productServices.deleteProduct(id).subscribe(()=>{
-      this.products = this.item.data
        this.products = this.products.filter(pr => pr._id != id)
+       alert("Xóa sản phẩm thành công!");
     },err=>{
       console.log(err);
     })
   }
+}
 }

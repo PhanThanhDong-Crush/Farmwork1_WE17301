@@ -1,15 +1,19 @@
 <div class="container pt-3">
     <h1>Add New Category</h1>
-    <form (ngSubmit)="onHandleSubmit()">
+    <form [formGroup]="categoryForm" (ngSubmit)="onHandleSubmit()">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Category:</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="category"
-                [(ngModel)]="category.name" name="name">
+            formControlName="name"  [(ngModel)]="category.name" name="name">
+
+            <div *ngIf="categoryForm.get('name')?.invalid && categoryForm.get('name')?.touched"
+                class="text-danger">
+             Vui lòng nhập category.
+           </div>    
         </div>
 
         <div class="mb-3 text-center">
-            <button type="submit" class="btn btn-primary" *ngIf="category && category.name !=''">Add
-                New</button>
-        </div>
+            <button type="submit" class="btn btn-primary" [disabled]="categoryForm.invalid">Add New</button>
+          </div>
     </form>
 </div>
