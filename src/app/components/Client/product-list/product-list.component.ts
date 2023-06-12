@@ -35,7 +35,7 @@ export class ProductListComponent implements OnInit
     this.productServices.productPagination(this.page).subscribe(data => {
       const product = data.data
       this.totalPages = data.totalPages
-      this.products = product
+      this.products = product    
     }, err => console.log(err)
     )
     //Lấy Categories
