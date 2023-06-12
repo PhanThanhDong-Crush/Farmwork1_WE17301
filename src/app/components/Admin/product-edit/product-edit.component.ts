@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ICategory } from 'src/app/interfaces/category';
 import { IProduct } from 'src/app/interfaces/product';
@@ -17,7 +18,7 @@ export class ProductEditComponent {
   }
   category:ICategory[]=[]
 
-  constructor (private productService:ProductService, private router:Router,private categoryService:CategoryService,private paramId:ActivatedRoute) {
+  constructor (private productService:ProductService,private fb: FormBuilder, private router:Router,private categoryService:CategoryService,private paramId:ActivatedRoute) {
    this.paramId.paramMap.subscribe(param=>{
     const id = String(param.get('id'))
     this.productService.getOneProduct(id).subscribe(data=>{
@@ -28,11 +29,23 @@ export class ProductEditComponent {
     this.category=cate
   })
   }
+  productForm = this.fb.group({
+    name: ['', Validators.required],
+    image: ['', Validators.required],
+    price: ['', [Validators.required, Validators.min(0)]],
+    quantity: ['', [Validators.required, Validators.min(0)]],
+    description: ['', Validators.required],
+    dateAdded: ['', Validators.required],
+    categoryId: ['', Validators.required]
+  });
 
   onHandleSubmit(){
+    if (this.productForm.invalid) {
+      return;
+    }
     this.productService.editProduct(this.product).subscribe(()=>{
       console.log(this.product);
-      
+      alert("Sửa sản phẩm thành công!");
       this.router.navigateByUrl('/admin/products')
     })
   }

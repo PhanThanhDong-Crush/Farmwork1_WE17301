@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ICategory } from 'src/app/interfaces/category';
 import { CategoryService } from 'src/app/services/category/category.service';
@@ -13,7 +14,7 @@ export class CategoryEditComponent {
     name:""
   }
 
-  constructor (private categoryService:CategoryService, private router:Router, private route:ActivatedRoute) {
+  constructor (private categoryService:CategoryService, private fb: FormBuilder, private router:Router, private route:ActivatedRoute) {
     this.route.paramMap.subscribe(param=>{
       const id = String(param.get('id'))
       console.log(id);
@@ -24,9 +25,17 @@ export class CategoryEditComponent {
       })
     })
   }
+  categoryForm = this.fb.group({
+    name: ['', Validators.required]
+   
+  });
 
   onHandleSubmit(){
+    if (this.categoryForm.invalid) {
+      return;
+    }
     this.categoryService.editCategory(this.category).subscribe(()=>{
+      alert("Sửa sản phẩm thành công!");
       this.router.navigateByUrl('/admin/category')
     })
   }

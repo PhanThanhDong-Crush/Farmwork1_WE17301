@@ -19,10 +19,13 @@ export class CategoriesComponent {
   }
 
   onHandleRemove(id:any){
+    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")) {
     this.categoryService.deleteCategory(id).subscribe(()=>{
       this.categories = this.categories.filter(item => item._id != id)
+      alert("Xóa sản phẩm thành công!");
     },err=>{
       console.log(err);
     })
   }
+}
 }
